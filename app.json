@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/home",
+    "pages/result/result",
+    "pages/wrong/wrong"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "五年级数学",
+    "navigationBarTextStyle": "black"
+  },
+  "tarBar": {
+    "backgroundColor": "#dfdfdf",
+    "selectedColor": "blue",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "日志",
+        "pagePath": "pages/logs/logs"
+      }
+    ]
+  }
+}

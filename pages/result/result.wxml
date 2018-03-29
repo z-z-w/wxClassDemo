@@ -1,0 +1,24 @@
+<!--pages/result/result.wxml-->
+<view class='result-container'>
+  <view class='score-wrapper'>
+    <text class="score">{{score}}</text>
+    <text class='rating'>{{rating}}</text>
+  </view>
+  <text class='result-text'>{{text}}</text>
+</view>
+<view class='nav-container'>
+  <view class='nav-item-container' catchtap='viewWrong'>
+    <image class='nav-img' src='/images/wrongs.png'></image>
+    <view class='nav-item' >
+      <text class='nav-title'>查看错题</text>
+      <text class='nav-text'>做错<text class='wrong-num'>{{wrongNum}}</text>题</text>
+    </view>
+  </view>
+  <view  class='nav-item-container' catchtap='reTest'>
+      <image class='nav-img' src='/images/reset.png'></image>
+      <view class='nav-item'>
+        <text class='nav-title'>重新考试</text>
+        <text class='nav-text'>成绩不满意？ 再战</text>
+      </view>
+    </view>
+</view>

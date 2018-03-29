@@ -1,0 +1,30 @@
+<!--pages/wrong/wrong.wxml-->
+<view class='wrong-list-container'>
+  <view class='wrong-item-container' wx:for="{{wrongList}}" wx:key="item">
+    <view class='question'>
+      <text class='single'>单选题</text>
+      <text class='title'>{{item.question}}</text>
+    </view>
+    <view class='answer'>
+      <block wx:for="{{item.option}}" wx:key="item" wx:for-item="option">
+        <view class='select-item' catchtap='nextQues'>
+          <image class="select-img" wx:if="{{item.rightAnswer == option}}" src='/images/right2.png'></image>
+          <image class="select-img" wx:elif="{{item.error == option}}" src='/images/wrong1.png'></image>
+          <block wx:else>
+            <view class='option' wx:if="{{index == 0}}">A</view>
+            <view class='option' wx:elif="{{index == 1}}">B</view>
+            <view class='option' wx:elif="{{index == 2}}">C</view>
+            <view class='option' wx:else>D</view>
+          </block>
+          <text class="select-text">{{option}}</text>
+        </view>
+      </block>
+    </view>
+    <view class='right-answer'>
+      <text wx:if="{{item.rightAnswer == item.option[0]}}">答案 A</text>
+      <text wx:if="{{item.rightAnswer == item.option[1]}}">答案 B</text>
+      <text wx:if="{{item.rightAnswer == item.option[2]}}">答案 C</text>
+      <text wx:if="{{item.rightAnswer == item.option[3]}}">答案 D</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,117 @@
+/* pages/home/home.wxss */
+page{
+  background-color: #fcfcfc;
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.question{
+  width: 100%;
+  line-height: 50rpx;
+}
+
+.single{
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  color: skyblue;
+  border: 1px solid skyblue;
+}
+.title{
+  color: #000;
+  font: bolder;
+}
+
+.answer{
+  width: 100%;
+  margin-top: 80rpx;
+}
+
+.select-item{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15rpx;
+  margin-bottom: 30rpx;
+  /* border: 1px solid #00c777;
+  border-radius: 20rpx; */
+}
+/* .select-item:active{
+  border: 1px solid skyblue;
+  border-radius: 50rpx;
+} */
+
+.option{
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  color: #666;
+  margin-right: 30rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+
+.select-text{
+  font-size: 36rpx;
+}
+
+.bottom-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+}
+
+.submit-container{
+  padding-left: 20rpx;
+}
+
+.computed-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.computed-item{
+  margin-right: 40rpx;
+}
+
+.submit-img, .computed-img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+.submit-text, .computed-text{
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+
+.app{
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.right-text{
+  color: skyblue;
+}
+
+.wrong-text{
+  color: orangered;
+}
+
+.page-text{
+  font-weight: 700;
+}
