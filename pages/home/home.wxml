@@ -3,29 +3,19 @@
     <text class='single'>单选题</text>
     <text class='title'>{{question.question}}</text>
   </view>
+  <block wx:if='{{images}}' wx:for="{{images}}" wx:key='*this'>
+    <view class='image-container'>
+      <text>图{{index + 1}}</text>
+      <image mode='aspectFit' class='img-item' src="{{item}}"></image>
+    </view>
+  </block>
   <view class='answer'>
     <block wx:for="{{answer}}" wx:key="{{item}}">
       <view class='select-item' data-select="{{item}}" catchtap='nextQues'>
-        <view class='option' wx:if="{{index == 0}}">A</view>
-        <view class='option' wx:elif="{{index == 1}}">B</view>
-        <view class='option' wx:elif="{{index == 2}}">C</view>
-        <view class='option' wx:else>D</view>
+        <view class='option'>{{option[index]}}</view>
         <text class="select-text">{{item}}</text>
       </view>
     </block>
-
-    <!-- <view class='select-item' data-select="{{answer[1]}}" catchtap='nextQues'>
-      <view class='option'>B</view>
-      <text class="select-text">{{answer[1]}}</text>
-    </view>
-    <view class='select-item' data-select="{{answer[2]}}" catchtap='nextQues'>
-      <view class='option'>C</view>
-      <text class="select-text">{{answer[2]}}</text>
-    </view>
-    <view class='select-item' data-select="{{answer[3]}}" catchtap='nextQues'>
-      <view class='option'>D</view>
-      <text class="select-text">{{answer[3]}}</text>
-    </view> -->
   </view>
 </view>
 <view class='bottom-container'>

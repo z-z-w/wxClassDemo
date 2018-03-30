@@ -10,39 +10,56 @@ Page({
     questionArr: [],
     question: {},
     answer: [],
+    option: [
+      "A", "B", "C", "D", "E", "F", "G"
+    ],
   },
   onLoad: function () {
-    this.getData();
+    // this.getData();
     app.globalData.wrong = [];
+    let quesArr = this.OptionSort(question.question);
+    let ques = quesArr[0];
+    let images = [];
+    if (ques.images) {
+      images = ques.images;
+    }
+    this.setData({
+      questionArr: quesArr,
+      question: ques,
+      answer: this.OptionSort(ques.option),
+      images: images
+    });
   },
   OptionSort(arr) {
     return arr.sort(function () { return Math.random() > 0.5 ? -1 : 1 });
   },
 
-  getData(){
-    var that = this;
-    wx.request({
-      url: 'http://47.106.84.130:8080/wechat/list',
-      method: 'GET',
-      header: 'json',
-      success(res) {
-        that.init(res.data);
-      },
-      fail(err) {
-        console.log(err);
-      }
-    })
-  },
+  // getData(){
+  //   var that = this;
+  //   wx.request({
+  //     url: 'http://47.106.84.130:8080/wechat/list',
+  //     method: 'GET',
+  //     header: {
+  //      'Content-Type': 'json' 
+  //     },
+  //     success(res) {
+  //       that.init(res.data);
+  //     },
+  //     fail(err) {
+  //       console.log(err);
+  //     }
+  //   })
+  // },
 
-  init(data){
-    var quesArr = this.OptionSort(data);
-    var ques = quesArr[0];
-    this.setData({
-      questionArr: quesArr,
-      question: ques,
-      answer: this.OptionSort(ques.option)
-    });
-  },
+  // init(data){
+  //   var quesArr = this.OptionSort(data);
+  //   var ques = quesArr[0];
+  //   this.setData({
+  //     questionArr: quesArr,
+  //     question: ques,
+  //     answer: this.OptionSort(ques.option)
+  //   });
+  // },
 
   // checkSelected(e) {
   //   console.log(e.target);
@@ -71,11 +88,16 @@ Page({
     if (this.data.i < this.data.questionArr.length) {
       this.data.i++;
       let ques = this.data.questionArr[this.data.i - 1];
+      let images = [];
+      if (ques.images) {
+        images = ques.images;
+      }
       setTimeout(() => {
         this.setData({
           i: this.data.i,
           question: ques,
-          answer: this.OptionSort(ques.option)
+          answer: this.OptionSort(ques.option),
+          images: images
         })
       }, 500);
     } else {
@@ -85,7 +107,7 @@ Page({
         wx.redirectTo({
           url: '/pages/result/result?score=' + score,
         })
-      }, 300);
+      }, 500);
     }
   },
 
